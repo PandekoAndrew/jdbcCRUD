@@ -12,6 +12,8 @@ public class Department {
 		this.faculty = faculty;
 	}
 
+	public Department() { }
+
 	public Long getId() {
 		return id;
 	}

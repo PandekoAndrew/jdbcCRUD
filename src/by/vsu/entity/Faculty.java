@@ -10,6 +10,8 @@ public class Faculty {
 		this.name = name;
 	}
 
+	public Faculty() { }
+
 	public Long getId() {
 		return id;
 	}

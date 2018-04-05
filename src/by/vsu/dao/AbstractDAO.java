@@ -12,7 +12,7 @@ public interface AbstractDAO<E, K> {
 	
 	public void update(E entity);
 	
-	public void delete(K id);
+	public void delete(E entity);
 	
 	public void deleteAll();
 }
