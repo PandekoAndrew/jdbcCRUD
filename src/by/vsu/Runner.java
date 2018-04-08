@@ -20,13 +20,13 @@ public class Runner {
 		int innerChoose = -1;
 
 		while (choose != 0) {
-			System.out.println("Выберите действие: ");
-			System.out.println("1. Посмотреть состояние");
-			System.out.println("2. Преподаватели");
-			System.out.println("3. Кафедры");
-			System.out.println("4. Факультеты");
-			System.out.println("5. Генерация данных");
-			System.out.println("0. Выход");
+			System.out.println("Choose an action: ");
+			System.out.println("1. Show state");
+			System.out.println("2. Teachers");
+			System.out.println("3. Departments");
+			System.out.println("4. Faculties");
+			System.out.println("5. Generate data");
+			System.out.println("0. Exit");
 
 			choose = scanner.nextInt();
 			switch (choose) {
@@ -38,19 +38,19 @@ public class Runner {
 				innerChoose = scanner.nextInt();
 				switch(innerChoose){
 				case 1:
-					System.out.println("Введите: <имя> <кафедра>");
+					System.out.println("Enter: <name> <department>");
 					tDAO.insert(new Teacher(null, scanner.next(), scanner.next()));
 					break;
 				case 2:
-					System.out.println("Введите: <id>");
+					System.out.println("Enter: <id>");
 					System.out.println(tDAO.getById(scanner.nextLong()));
 					break;
 				case 3:
-					System.out.println("Введите: <id> <имя> <кафедра>");
+					System.out.println("Enter: <id> <name> <department>");
 					tDAO.update(new Teacher(scanner.nextLong(), scanner.next(), scanner.next()));
 					break;
 				case 4:
-					System.out.println("Введите: <id>");
+					System.out.println("Enter: <id>");
 					tDAO.delete(tDAO.getById(scanner.nextLong()));
 					break;
 				case 5:
@@ -65,19 +65,19 @@ public class Runner {
 				innerChoose = scanner.nextInt();
 				switch(innerChoose){
 				case 1:
-					System.out.println("Введите: <название> <факультет>");
+					System.out.println("Enter: <name> <faculty>");
 					dDAO.insert(new Department(null, scanner.next(), scanner.next()));
 					break;
 				case 2:
-					System.out.println("Введите: <id>");
+					System.out.println("Enter: <id>");
 					System.out.println(dDAO.getById(scanner.nextLong()));
 					break;
 				case 3:
-					System.out.println("Введите: <id> <название> <факультет>");
+					System.out.println("Enter: <id> <name> <faculty>");
 					dDAO.update(new Department(scanner.nextLong(), scanner.next(), scanner.next()));
 					break;
 				case 4:
-					System.out.println("Введите: <id>");
+					System.out.println("Enter: <id>");
 					dDAO.delete(dDAO.getById(scanner.nextLong()));
 					break;
 				case 5:
@@ -92,19 +92,19 @@ public class Runner {
 				innerChoose = scanner.nextInt();
 				switch(innerChoose){
 				case 1:
-					System.out.println("Введите: <название>");
+					System.out.println("Enter: <name>");
 					fDAO.insert(new Faculty(null, scanner.next()));
 					break;
 				case 2:
-					System.out.println("Введите: <id>");
+					System.out.println("Enter: <id>");
 					System.out.println(fDAO.getById(scanner.nextLong()));
 					break;
 				case 3:
-					System.out.println("Введите: <id> <название>");
+					System.out.println("Enter: <id> <name>");
 					fDAO.update(new Faculty(scanner.nextLong(), scanner.next()));
 					break;
 				case 4:
-					System.out.println("Введите: <id>");
+					System.out.println("Enter: <id>");
 					fDAO.delete(fDAO.getById(scanner.nextLong()));
 					break;
 				case 5:
@@ -122,7 +122,7 @@ public class Runner {
 			}
 		}
 
-		System.out.println("\nДо свидания!");
+		System.out.println("\nBye!");
 		scanner.close();
 	}
 
@@ -164,12 +164,12 @@ public class Runner {
 	}
 	
 	private static void innerChoose(){
-		System.out.println("1. Добавить");
-		System.out.println("2. Найти по id");
-		System.out.println("3. Обновить");
-		System.out.println("4. Удалить по id");
-		System.out.println("5. Удалить всё");
-		System.out.println("9. Вернуться");
+		System.out.println("1. Add");
+		System.out.println("2. Find by id");
+		System.out.println("3. Update");
+		System.out.println("4. Delete by id");
+		System.out.println("5. Delete all");
+		System.out.println("9. Return");
 	}
 	
 	private static void printState() {
